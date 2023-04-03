@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Регистрация</title>
+  <title>Войти</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
@@ -61,8 +61,14 @@
   }
 }
 
-
-
+  a{
+    text-decoration: none;
+    color: white;
+  }
+  a:hover{
+    color: black;
+    text-decoration: none;
+  }
   </style>
 </head>
 <body>
@@ -70,7 +76,7 @@
   <div class="container">
     <br>
     <img src="assets/images/snow2.svg" alt="logo" width="50">
-    <h2 class="">Регистрация</h2>
+    <h2>Войти</h2>
     <form>
       <div class="form-group ">
         <label for="email">Email:</label>
@@ -80,12 +86,14 @@
         <label for="pwd" style="text-align: left;">Пароль:</label>
         <input type="password" class="form-control" id="pwd" placeholder="Введите пароль" name="pswd">
       </div>
-      <div class="form-group">
-        <label for="pwd" style="text-align: left;">Повторите пароль:</label>
-        <input type="password" class="form-control" id="pwd" placeholder="Введите пароль" name="pswd">
+      <div class="form-group form-check">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" name="remember"> Запомнить меня
+        </label>
       </div>
-      <a href="login.html"><button type="button" class="btn btn-primary" style="background-color: black; border-color:orange; width: 80%;"><b>Регистрация</b></button></a>
-      
+      <a href="index.html"><button type="button" class="btn btn-primary" style="background-color: black; border-color:orange; width: 80%;">Войти</button></a>
+      <br><br>
+      <b>Нету аккаунта?<a href="reges.html"> Регистрация</a></b>
     </form><br>
   </div>
 </div>
