@@ -107,3 +107,9 @@ if($(this).scrollTop() > 300) {
     });
 }
 
+$(document).ready(function() {
+  // При нажатии на кнопку редактирования профиля открываем модальное окно
+  $('#editProfileModal').on('shown.bs.modal', function () {
+    $('#username').focus();
+  });
+});

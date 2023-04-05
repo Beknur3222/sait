@@ -20,7 +20,7 @@
     <link rel="shortcut icon" href="assets/images/snow2.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <title>Профиль</title>
+    <title>Профиль редактирования</title>
     <style type="text/css">
         body{
             background-image: url('assets/images/fon-about.jpg');
@@ -33,7 +33,13 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: justify;
         }
-        
+        .as{
+            text-decoration: none;
+            color: black;
+        }
+        .as:hover{
+            color: #936BE3;
+        }
 .circle-image{
   display: inline-block;
   border-radius: 50%;
@@ -46,14 +52,6 @@
   height:100%;
   object-fit: cover;
 }
-.as{
-            text-decoration: none;
-            color: black;
-        }
-        .as:hover{
-            color: black;
-            text-decoration: none;
-        }
     </style>
 </head>
 <body>
@@ -72,36 +70,68 @@
     </div>
 </header>
 
-<div class="container" style="width: 100%; margin-top: 11%;">
+<div class="container" style="width: 100%; margin-top: 13%;">
 <div class="row" style="width: 80%; margin-left:200px">
 
-  <div class="col-md-6 " style="background-color: white; border-radius: 20px">
+  <div class="col-md-6 ">
     <div class="d-flex flex-column justify-content-center align-items-start ">
-      <br>
+      <form class="col-md-6 order-md-2">
         <div class="form-group">
           <label for="login">Логин:</label>
-          <h5>Login</h5>
+          <input type="text" class="form-control" id="login" placeholder="Enter login">
         </div>
         <div class="form-group">
           <label for="name">Имя:</label>
-          <h5>FirstName LastName</h5>
+          <input type="text" class="form-control" id="name" placeholder="Enter firstname">
+        </div>
+        <div class="form-group">
+          <label for="name">Фамилия:</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter lastname">
         </div>
         <div class="form-group">
           <label for="email">Email:</label>
-          <h5><a>Email</a></h5>
+          <input type="email" class="form-control" id="email" placeholder="Введите email" name="email">
         </div>
         <div class="form-group">
           <label for="gender">Пол:</label>
-          <h5>Sex</h5>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="male" value="male">
+            <label class="form-check-label" for="male">
+              Мужской
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+            <label class="form-check-label" for="female">
+              Женский
+            </label>
+          </div>
         </div>        
         <div class="form-group">
           <label for="location">Местоположение:</label>
-          <h5>Location</h5>
+          <input type="text" class="form-control" id="location" placeholder="Enter location">
         </div>
         <div class="form-group">
           <label for="birthday">День рождения:</label>
-          <h5>Birthday</h5>
+          <input type="date" class="form-control" id="birthday">
         </div>
+        <div class="form-group">
+          <label for="pwd" style="text-align: left;">Пароль:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Введите пароль" name="pswd">
+        </div>
+        <div class="form-group">
+          <label for="pwd" style="text-align: left;">Повтарий пароль:</label>
+          <input type="password" class="form-control" id="pwd" placeholder="Введите пароль" name="pswd">
+        </div>
+        <div class="form-group">
+          <label for="image">Аватарка:</label>
+          <input type="file" class="form-control-file" id="image">
+        </div>
+        <div class="form-group">
+        <a href="profile.html" class="btn btn-primary">Сохранить изменение</a></div>
+        <div class="form-group">
+        <a href="profile.html" class="btn btn-danger">Отменить</a></div>
+      </form>
     </div>
   </div>
   <div class="col-md-6 text-center">
@@ -109,85 +139,48 @@
       <a href="#"><img src="assets/images/intro2.jpg"/></a>
      </span>
   </div>
-
-
-
-
-
-
-
 </div>
-<br>
-<hr>
-<br>
-<div class="container">
-  <h1>Мои картины</h1>
-  <br>
-  <div class="row">
-    <div class="col-md-4 mb-4">
-      <a href="#" class="as">
-      <div class="card">
-        <img src="assets/images/intro.jpg" class="card-img-top" alt="Картинка">
-        <div class="card-body">
-          <h5 class="card-title">Название картинки 1</h5>
-          <p class="card-text" style="text-align: right;">Дата публикации: 01.01.2022</p>
-        </div>
+</div>
+
+
+
+<!-- Window -->
+<!-- <div class="container" style="width: 80%; margin-top: 20%;">
+
+<!-- Кнопка для вызова модального окна -->
+<!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editProfileModal">
+  <i class="fa fa-pencil"></i> Редактировать профиль
+</button>
+
+<!-- Модальное окно для редактирования профиля -->
+<!-- <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editProfileModalLabel">Редактировать профиль</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
       </div>
-    </a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="#" class="as">
-      <div class="card">
-        <img src="assets/images/intro1.jpg" class="card-img-top" alt="Картинка">
-        <div class="card-body">
-          <h5 class="card-title">Название картинки 2</h5>
-          <p class="card-text" style="text-align: right;">Дата публикации: 02.01.2022</p>
-        </div>
-      </div></a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="#" class="as">
-      <div class="card">
-        <img src="assets/images/intro2.jpg" class="card-img-top" alt="Картинка">
-        <div class="card-body">
-          <h5 class="card-title">Название картинки 3</h5>
-          <p class="card-text" style="text-align: right;">Дата публикации: 03.01.2022</p>
-        </div>
-      </div></a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="#" class="as">
-      <div class="card">
-        <img src="assets/images/fon-about.jpg" class="card-img-top" alt="Картинка">
-        <div class="card-body">
-          <h5 class="card-title">Название картинки 2</h5>
-          <p class="card-text" style="text-align: right;">Дата публикации: 02.01.2022</p>
-        </div>
-      </div></a>
-    </div>
-    <div class="col-md-4 mb-4">
-      <a href="#" class="as">
-      <div class="card">
-        <img src="assets/images/fon-join.jpg" class="card-img-top" alt="Картинка">
-        <div class="card-body">
-          <h5 class="card-title">Название картинки 3</h5>
-          <p class="card-text" style="text-align: right;">Дата публикации: 03.01.2022</p>
-        </div>
-      </div></a>
+      <div class="modal-body">
+        <!-- Вставляем форму редактирования профиля -->
+        <!-- <form>
+          <div class="form-group">
+            <label for="username">Имя пользователя</label>
+            <input type="text" class="form-control" id="username" name="username" placeholder="Введите имя пользователя">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Введите email">
+          </div>
+          <button type="submit" class="btn btn-primary">Сохранить</button>
+        </form>
+        
+      </div>
     </div>
   </div>
 </div>
-<br>
-<div class="row" style="width: 50%; margin-left: 30%;">
-  <div class="form-group">
-    <a href="profile_creat.html" class="btn btn-primary float-start">Редактировать профиль</a>
-  </div>
-  <div class="form-group">
-    <a href="index.html" class="btn btn-danger float-end">Выйти из аккаунта</a>
-  </div>
-</div>
-</div>
-
+<!-- </div> -->
 
 
 
