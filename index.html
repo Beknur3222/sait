@@ -17,10 +17,60 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="shortcut icon" href="assets/images/snow2.svg" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="assets/js/scripts.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+
     <title>Главная страница</title>
+    <link href="assets/css/bootstrap.css" rel='stylesheet' type='text/css' />
+<link href="assets/css/style.css" rel='stylesheet' type='text/css' />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script src="assets/js/jquery.min.js"></script>
+<!--<script src="js/jquery.easydropdown.js"></script>-->
+<!--start slider -->
+<link rel="stylesheet" href="assets/css/fwslider.css" media="all">
+<script src="assets/js/jquery-ui.min.js"></script>
+<script src="assets/js/fwslider.js"></script>
+<!--end slider -->
+<script type="text/javascript">
+        $(document).ready(function() {
+            $(".dropdown img.flag").addClass("flagvisibility");
+
+            $(".dropdown dt a").click(function() {
+                $(".dropdown dd ul").toggle();
+            });
+                        
+            $(".dropdown dd ul li a").click(function() {
+                var text = $(this).html();
+                $(".dropdown dt a span").html(text);
+                $(".dropdown dd ul").hide();
+                $("#result").html("Selected value is: " + getSelectedValue("sample"));
+            });
+                        
+            function getSelectedValue(id) {
+                return $("#" + id).find("dt a span.value").html();
+            }
+
+            $(document).bind('click', function(e) {
+                var $clicked = $(e.target);
+                if (! $clicked.parents().hasClass("dropdown"))
+                    $(".dropdown dd ul").hide();
+            });
+
+
+            $("#flagSwitcher").click(function() {
+                $(".dropdown img.flag").toggleClass("flagvisibility");
+            });
+        });
+     </script>
 </head>
 <body>
 <header class="header" id="header">
@@ -29,7 +79,7 @@
             <div class="header__logo"><a href="#">SBR</a></div>
 
             <nav class="nav">
-                <a class="nav__link" href="#" style="text-decoration: none;">Авторы</a>
+                <a class="nav__link" href="avtor.html" style="text-decoration: none;">Авторы</a>
                 <a class="nav__link" href="about.html" style="text-decoration: none;">О нас</a>
                 <a class="nav__link" href="contact.html" style="text-decoration: none;">Контакты</a>
                 <a class="nav__link" href="login.html" style="text-decoration: none;">Войти</a>
@@ -38,8 +88,7 @@
     </div>
 </header>
 
-
-<div id="news-carousel" class="carousel slide firstslaide" data-ride="carousel">
+<div id="news-carousel" class="carousel slide firstslaide banner" data-ride="carousel">
   <ol class="carousel-indicators">
     <li data-target="#news-carousel" data-slide-to="0" class="active"></li>
     <li data-target="#news-carousel" data-slide-to="1"></li>
@@ -85,7 +134,17 @@
 
 
 
-
+<div class="content-bottom">
+  <div class="container">
+    <div class="row content_bottom-text">
+      <div class="col-md-7">
+      <h3>The Mountains<br>Snowboarding</h3>
+      <p class="m_1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio.</p>
+      <p class="m_2">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio.</p>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -138,7 +197,7 @@
     </div>
   </div>
   
-  <div class="containerpt1">
+  <div class="containerpt1" style="background-color: black;">
     <div class="image">
       <img src="https://via.placeholder.com/500x500.png?text=Example+Image" alt="Пример изображения">
     </div>
@@ -162,96 +221,12 @@
 
 
 
-<!-- <div>
-    <h1>6</h1>
-    <h1>5</h1><h1>4</h1><h1>3</h1><h1>2</h1><h1>1</h1>
-</div>
-<div>
-    <h1>6</h1>
-    <h1>5</h1><h1>4</h1><h1>3</h1><h1>2</h1><h1>1</h1>
-</div>
-<div>
-    <h1>6</h1>
-    <h1>5</h1><h1>4</h1><h1>3</h1><h1>2</h1><h1>1</h1>
-</div>
-<div>
-    <h1>6</h1>
-    <h1>5</h1><h1>4</h1><h1>3</h1><h1>2</h1><h1>1</h1>
-</div> -->
 
-
-<!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem; margin-left: 20px;">
-          <img src="assets/images/intro.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item">
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>      
-      </div>
-      <div class="carousel-item">
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>
-        <div class="card col-6 col-lg-2 mb-3" style="width: 18rem;">
-          <img src="assets/images/intro1.jpg" class="card-img-top" alt="...">
-          <div class="card-body">
-            <h5 class="card-title">Заголовок</h5>
-            <p class="card-text">Текст описания изображения.</p>
-          </div>
-        </div>      
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div> -->
 
 
 
 <!-- slider -->
-<div class="container" style="background-color: black;">
+<!-- <div class="container" style="background-color: black;">
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -290,85 +265,126 @@
     <span class="visually-hidden">Next</span>
   </button>
 </div>
+</div> -->
+
+
+<div class="main">
+  <div class="content-top">
+    
+    <h2>snowboards</h2>
+    <p>hendrerit in vulputate velit esse molestie consequat, vel illum dolore</p>
+        
+      <ul id="flexiselDemo3">
+      <li><img src="assets/images/fon-join.jpg"/></li>
+      <li><img src="assets/images/intro1.jpg" /></li>
+      <li><img src="assets/images/intro2.jpg" /></li>
+      <li><img src="assets/images/intro1.jpg" /></li>
+      <li><img src="assets/images/intro.jpg"/></li>
+    </ul>
+  <h3>HuvrBoard Extreme Series</h3>
+    <script type="text/javascript">
+  $(window).load(function() {
+    $("#flexiselDemo3").flexisel({
+      visibleItems: 5,
+      animationSpeed: 1000,
+      autoPlay: true,
+      autoPlaySpeed: 3000,    		
+      pauseOnHover: true,
+      enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+          portrait: { 
+            changePoint:480,
+            visibleItems: 1
+          }, 
+          landscape: { 
+            changePoint:640,
+            visibleItems: 2
+          },
+          tablet: { 
+            changePoint:768,
+            visibleItems: 3
+          }
+        }
+      });
+      
+  });
+  </script>
+  <script type="text/javascript" src="assets/js/jquery.flexisel.js"></script>
+  </div>
 </div>
 
 
 
 
-
-
-<br>
-
-<div class="col-sm-" style="margin-left: 20px; margin-right: 20px;">
-  <h1>About Studio</h1>
-  <br>
-  <h5 style="text-align: justify;">
-    Біздің проектке жоғарыдағы сайттарды үлгі ретінде алып отырық. Бұл сайттарда кез келген өнер туындысы туралы ақпараттар және сол туындының авторлары туралы да жазылады. Кей туындыларды сатуға болатын мүмкіндік берсе болатын қылып қоятын мүмкіндік болады. Және әр туындыға өз ойларын(комментария) жаза алатын болады. 
-  </h5>
-</div>
-
-
-
-<footer class="bd-footer col-sm- py-4 py-md-5 mt-5 bg-body-tertiary lastblock">
-    <div class="container py-4 py-md-5 px-4 px-md-3 text-body-secondary">
-      <div class="row">
-        <div class="col-lg-4 mb-3">
-          <a class="d-inline-flex align-items-center mb-2 text-body-secondary text-decoration-none" href="/" aria-label="Bootstrap">
-            <span class="fs-5">Address</span>
-          </a>
-          <ul class="list-unstyled small">
-            <li class="mb-2">ул. Сатпаева, 22а 050013, Алматы Республика Казахстан</li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 offset-lg-1 mb-3">
-          <h5>About</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="/">Карта сайта</a></li>
-            <li class="mb-2"><a href="#">Документы</a></li>
-            <li class="mb-2"><a href="#">О нас</a></li>
-            <li class="mb-2"><a href="#">Местоположение на карте</a></li>
-            <li class="mb-2"><a href="#">Главная страница</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Contact</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="/docs/5.3/getting-started/">8 (705) 451 32 22</a></li>
-            <li class="mb-2"><a href="/docs/5.3/examples/starter-template/">8 (777) 777 77 77</a></li>
-            <li class="mb-2"><a href="/docs/5.3/getting-started/webpack/">asemush@gmail.com</a></li>
-            <li class="mb-2"><a href="/docs/5.3/getting-started/parcel/">Bai@gmail.com</a></li>
-          </ul>
-        </div>
-        <div class="col-6 col-lg-2 mb-3">
-          <h5>Social network</h5>
-          <ul class="list-unstyled">
-            <li class="mb-2"><a href="https://github.com/twbs/bootstrap">Instagram</a></li>
-            <li class="mb-2"><a href="https://github.com/twbs/bootstrap/tree/v4-dev">Youtube</a></li>
-            <li class="mb-2"><a href="https://github.com/twbs/icons">Facebook</a></li>
-            <li class="mb-2"><a href="https://github.com/twbs/rfs">Twitter</a></li>
-            <li class="mb-2"><a href="https://github.com/twbs/bootstrap-npm-starter">Vk</a></li>
-          </ul>
-        </div>
+<div class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Products</h4>
+          <li><a href="#">Mens</a></li>
+          <li><a href="#">Womens</a></li>
+          <li><a href="#">Youth</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>About</h4>
+          <li><a href="#">Careers and internships</a></li>
+          <li><a href="#">Sponserships</a></li>
+          <li><a href="#">team</a></li>
+          <li><a href="#">Catalog Request/Download</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Customer Support</h4>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Shipping and Order Tracking</a></li>
+          <li><a href="#">Easy Returns</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Replacement Binding Parts</a></li>
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <ul class="footer_box">
+          <h4>Newsletter</h4>
+          <div class="footer_search">
+               <form>
+              <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
+              <input type="submit" value="Go">
+               </form>
+              </div>
+          <ul class="social">	
+            <li class="facebook"><a href="#"><span> </span></a></li>
+            <li class="twitter"><a href="#"><span> </span></a></li>
+            <li class="instagram"><a href="#"><span> </span></a></li>	
+            <li class="pinterest"><a href="#"><span> </span></a></li>	
+            <li class="youtube"><a href="#"><span> </span></a></li>										  				
+            </ul>
+             
+        </ul>
       </div>
     </div>
-  </footer>
-
-
-
-
-<div class="the_end col-md-">
-    <div class="container">
-        <div class="the_end_link">
-    <b>Satbayev University © 2023. Галерея искусств «SBR»</b>
-    <b>Что то</b>
-        </div>
-    </div>
+    <div class="row footer_bottom">
+        <div class="copy">
+             <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+            </div>
+        <!-- <dl id="sample" class="dropdown">
+            <dt><a href="#"><span>Change Region</span></a></dt>
+            <dd>
+                <ul>
+                    <li><a href="#">Australia<img class="flag" src="images/as.png" alt="" /><span class="value">AS</span></a></li>
+                    <li><a href="#">Sri Lanka<img class="flag" src="images/srl.png" alt="" /><span class="value">SL</span></a></li>
+                    <li><a href="#">Newziland<img class="flag" src="images/nz.png" alt="" /><span class="value">NZ</span></a></li>
+                    <li><a href="#">Pakistan<img class="flag" src="images/pk.png" alt="" /><span class="value">Pk</span></a></li>
+                    <li><a href="#">United Kingdom<img class="flag" src="images/uk.png" alt="" /><span class="value">UK</span></a></li>
+                    <li><a href="#">United States<img class="flag" src="images/us.png" alt="" /><span class="value">US</span></a></li>
+                </ul>
+             </dd>
+           </dl> -->
+       </div>
+  </div>
 </div>
-
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="assets/js/scripts.js"></script>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 </html>
