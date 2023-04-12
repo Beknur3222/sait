@@ -113,3 +113,8 @@ $(document).ready(function() {
     $('#username').focus();
   });
 });
+// Получить ссылку на контейнер комментариев
+const commentSection = document.getElementById('comment-section');
+
+// Добавить класс "comment-column" к контейнеру комментариев
+commentSection.classList.add('comment-column');
