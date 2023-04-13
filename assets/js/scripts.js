@@ -118,3 +118,72 @@ const commentSection = document.getElementById('comment-section');
 
 // Добавить класс "comment-column" к контейнеру комментариев
 commentSection.classList.add('comment-column');
+
+
+$(document).ready(function() {
+  $(".dropdown img.flag").addClass("flagvisibility");
+
+  $(".dropdown dt a").click(function() {
+      $(".dropdown dd ul").toggle();
+  });
+              
+  $(".dropdown dd ul li a").click(function() {
+      var text = $(this).html();
+      $(".dropdown dt a span").html(text);
+      $(".dropdown dd ul").hide();
+      $("#result").html("Selected value is: " + getSelectedValue("sample"));
+  });
+              
+  function getSelectedValue(id) {
+      return $("#" + id).find("dt a span.value").html();
+  }
+
+  $(document).bind('click', function(e) {
+      var $clicked = $(e.target);
+      if (! $clicked.parents().hasClass("dropdown"))
+          $(".dropdown dd ul").hide();
+  });
+
+
+  $("#flagSwitcher").click(function() {
+      $(".dropdown img.flag").toggleClass("flagvisibility");
+  });
+});
+
+  $(window).load(function() {
+    $("#flexiselDemo3").flexisel({
+      visibleItems: 5,
+      animationSpeed: 1000,
+      autoPlay: true,
+      autoPlaySpeed: 3000,    		
+      pauseOnHover: true,
+      enableResponsiveBreakpoints: true,
+        responsiveBreakpoints: { 
+          portrait: { 
+            changePoint:480,
+            visibleItems: 1
+          }, 
+          landscape: { 
+            changePoint:640,
+            visibleItems: 2
+          },
+          tablet: { 
+            changePoint:768,
+            visibleItems: 3
+          }
+        }
+      });
+      
+  });
+
+  $(document).ready(function() {
+    $('form').submit(function(event) {
+      event.preventDefault();
+      var comment = $('#comment').val();
+      if (comment !== '') {
+        var card = $('<div class="card mb-3"><div class="card-body"><p class="card-text1">' + comment + '</p></div></div>');
+        $('#comment-section').append(card);
+        $('#comment').val('');
+      }
+    });
+  });

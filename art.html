@@ -27,61 +27,9 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
     <script src="assets/js/jquery.min.js"></script>
-    <script type="text/javascript">
-            $(document).ready(function() {
-                $(".dropdown img.flag").addClass("flagvisibility");
-    
-                $(".dropdown dt a").click(function() {
-                    $(".dropdown dd ul").toggle();
-                });
-                            
-                $(".dropdown dd ul li a").click(function() {
-                    var text = $(this).html();
-                    $(".dropdown dt a span").html(text);
-                    $(".dropdown dd ul").hide();
-                    $("#result").html("Selected value is: " + getSelectedValue("sample"));
-                });
-                            
-                function getSelectedValue(id) {
-                    return $("#" + id).find("dt a span.value").html();
-                }
-    
-                $(document).bind('click', function(e) {
-                    var $clicked = $(e.target);
-                    if (! $clicked.parents().hasClass("dropdown"))
-                        $(".dropdown dd ul").hide();
-                });
-    
-    
-                $("#flagSwitcher").click(function() {
-                    $(".dropdown img.flag").toggleClass("flagvisibility");
-                });
-            });
-         </script>
-         <!----details-product-slider--->
-            <!-- Include the Etalage files -->
               <link rel="stylesheet" href="css/etalage.css">
               <script src="js/jquery.etalage.min.js"></script>
-            <!-- Include the Etalage files -->
-            <script>
-                jQuery(document).ready(function($){
-          
-                  $('#etalage').etalage({
-                    thumb_image_width: 300,
-                    thumb_image_height: 400,
-                    
-                    show_hint: true,
-                    click_callback: function(image_anchor, instance_id){
-                      alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
-                    }
-                  });
-                  // This is for the dropdown list example:
-                  $('.dropdownlist').change(function(){
-                    etalage_show( $(this).find('option:selected').attr('class') );
-                  });
-    
-              });
-            </script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="assets/js/scripts.js"></script>
 
@@ -162,67 +110,6 @@
         </div>
     </div>
 </header>
-
-
-<!-- <div class="container" style="width: 100%; margin-top: 11%;">
-<div class="row" style="width: 100%; margin-left:0px">
-
-  <div class="col-md-6 " style="background-color: white; border-radius: 20px">
-    <div class="d-flex flex-column content-center  ">
-      <br>
-        <div class="form-group">
-          <label for="name"><h2>Art</h2></label>
-          
-        </div>
-        <div class="form-group">
-          <label for="login"><h7>Категория:</h7></label>
-          <h5>Category</h5>
-        </div>
-        <div class="form-group">
-          <label for="email"><h7>Описание:</h7></label>
-          <h5>Description</h5>
-        </div>
-        <div class="form-group">
-          <label for="login"><h7>Создатель:</h7></label>
-          <h5>Login</h5>
-        </div>
-        <div class="form-group">
-          
-<div class="row" style="margin-left: 1%;">
-          <button type="button" class="btn btn-success btn-like">
-            <i class="bi bi-hand-thumbs-up"></i>
-            <span class="animate__animated animate__heartBeat animate__fast">Нравится</span>
-          </button>
-          
-          <div  class="container" style="background-color: grey; width: 10%; border-radius: 50%;  display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100%;
-          text-align: center;">
-            <br><br>
-            <b>
-              1
-            </b>
-          </div>
-
-        </div>
-        </div>   
-          <div class="form-group" style="text-align: right;">
-            <br>
-            <h5 style="text-align: right; font-size: 12px;">Дата публикации: 03.01.2022</h5>
-          </div>   
-    </div>
-  </div>
-  <div class="col-md-6 text-center">
-    <span class="oval-image" style="width: 150px; height: 150px;">
-      <a href="#"><img src="assets/images/intro2.jpg" style="width: 556px; height: 365px; border-radius: 20px;"/></a>
-     </span>
-  </div>
-
-</div>
-</div>
-
-<br> -->
 
 
 <div class="main" style="margin-top: 7%;">
@@ -431,19 +318,6 @@
         <div class="copy">
              <p>© 2023 Template by <a href="#" target="_blank">student Satbayev University</a></p>
             </div>
-        <!-- <dl id="sample" class="dropdown">
-            <dt><a href="#"><span>Change Region</span></a></dt>
-            <dd>
-                <ul>
-                    <li><a href="#">Australia<img class="flag" src="images/as.png" alt="" /><span class="value">AS</span></a></li>
-                    <li><a href="#">Sri Lanka<img class="flag" src="images/srl.png" alt="" /><span class="value">SL</span></a></li>
-                    <li><a href="#">Newziland<img class="flag" src="images/nz.png" alt="" /><span class="value">NZ</span></a></li>
-                    <li><a href="#">Pakistan<img class="flag" src="images/pk.png" alt="" /><span class="value">Pk</span></a></li>
-                    <li><a href="#">United Kingdom<img class="flag" src="images/uk.png" alt="" /><span class="value">UK</span></a></li>
-                    <li><a href="#">United States<img class="flag" src="images/us.png" alt="" /><span class="value">US</span></a></li>
-                </ul>
-             </dd>
-           </dl> -->
        </div>
   </div>
 </div>
