@@ -1289,6 +1289,18 @@ p.m_8{
 	height:100%;
 	object-fit: cover;
   }
+  .circle-image1{
+	display: inline-block;
+	border-radius: 50%;
+	overflow: hidden;
+	width: 150px;
+	height: 150px;
+  }
+  .circle-image1 img{
+	width:100%;
+	height:100%;
+	object-fit: cover;
+  }
 h4.m_11{
 	color:#333;
 	font-size:1.2em;
@@ -1398,3 +1410,71 @@ padding-top: 7%;
 margin-left: 0px;
 		}	
 	}
+
+
+	h4{
+		font-size: 20px;
+		font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+		text-align: justify;
+	}
+	
+.circle-image{
+display: inline-block;
+border-radius: 25%;
+overflow: hidden;
+width: 20px;
+height: 22px;
+}
+.circle-image img{
+width:100%;
+height:100%;
+object-fit: cover;
+}
+.circle-image-com{
+display: inline-block;
+border-radius: 25%;
+overflow: hidden;
+width: 50px;
+height: 50px;
+}
+.circle-image-com img{
+width:100%;
+height:100%;
+object-fit: cover;
+}
+.as{
+		text-decoration: none;
+		color: black;
+	}
+	.as:hover{
+		color: black;
+		text-decoration: none;
+	}
+
+
+	.card {
+		position: relative;
+		overflow: hidden;
+	  }
+	  .card:hover .hover-img {
+		opacity: 1;
+		transform: translateY(0);
+	  }
+	  .hover-img {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		width: 100%;
+		height: 100%;
+		padding: 10px;
+		background-color: rgba(0, 0, 0, 0.8);
+		color: #fff;
+		opacity: 0;
+		transform: translateY(100%);
+		transition: all 0.3s ease-in-out;
+	  }
+	  .hover-img::before {
+		content: attr(alt);
+		font-size: 18px;
+		font-weight: bold;
+	  }
